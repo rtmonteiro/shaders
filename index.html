@@ -19,10 +19,51 @@
             width: 100%;
             height: 100%;
         }
+
+        .selector {
+            position: absolute;
+            top: 10px;
+            left: calc(50% - 100px);
+            z-index: 1;
+
+            background-color: antiquewhite;
+            padding: 12px;
+            border-radius: 8px;
+            box-shadow: 3px 3px blue;
+            border: 4px solid blue;
+
+            font-family: 'Roboto', sans-serif;
+            font-size: 1.25rem;
+            font-weight: bold;
+            color: crimson;
+            display: flex;
+            flex-direction: column;
+            gap: 10px;
+        }
+        .selector select {
+            font-family: 'Roboto', sans-serif;
+            font-size: 1rem;
+            color: black;
+        }
     </style>
 </head>
 <body>
+    <div class="selector">
+        <label for="">Change Pattern:</label>
+        <select onchange="changeCanvaUrl()">
+            <option value="god.frag" selected>God</option>
+            <option value="circle.frag">Circle</option>
+        </select>
+    </div>
     <canvas class="glslCanvas" data-fragment-url="god.frag" width="500" height="500"></canvas>
+    <script>
+        function changeCanvaUrl() {
+            var canvas = document.querySelector('.glslCanvas');
+            var url = document.querySelector('select').value;
+            canvas.dataset.fragmentUrl = url;
+            const sandbox = new GlslCanvas(canvas);
+        }
+    </script>
     <script type="text/javascript" src="https://rawgit.com/patriciogonzalezvivo/glslCanvas/master/dist/GlslCanvas.js"></script>
 </body>
 </html>
