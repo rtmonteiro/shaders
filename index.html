@@ -49,8 +49,8 @@
 </head>
 <body>
     <div class="selector">
-        <label for="">Change Pattern:</label>
-        <select onchange="changeCanvaUrl()">
+        <label for="dropdown">Change Pattern:</label>
+        <select id="dropdown" name="dropdown" onchange="changeCanvaUrl()">
             <option value="god.frag" selected>God</option>
             <option value="circle.frag">Circle</option>
         </select>
@@ -64,6 +64,6 @@
             const sandbox = new GlslCanvas(canvas);
         }
     </script>
-    <script type="text/javascript" src="https://rawgit.com/patriciogonzalezvivo/glslCanvas/master/dist/GlslCanvas.js"></script>
+        <script type="text/javascript" src="https://rawgit.com/patriciogonzalezvivo/glslCanvas/master/dist/GlslCanvas.js"></script>
 </body>
 </html>
